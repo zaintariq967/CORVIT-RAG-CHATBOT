@@ -7,6 +7,20 @@ from sentence_transformers import SentenceTransformer
 import faiss
 from groq import Groq
 
+import streamlit as st
+
+import streamlit as st
+
+# ✅ ADD THIS — must be first st.* call
+st.set_page_config(
+    page_title="CorvitRAG AI Assistant",
+    page_icon="🤖",
+    layout="wide",
+    initial_sidebar_state="expanded"   # 👈 forces sidebar open in iframe
+)
+
+
+
 # ── Setup & Paths ──────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parent
 PDF_PATH, STORE_DIR = ROOT / "asset/data/corvit.pdf", ROOT / "asset/vectorstore"
